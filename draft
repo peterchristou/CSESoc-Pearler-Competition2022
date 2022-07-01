@@ -1,0 +1,1 @@
+GET /api/v1/repayments?income=100000&expenses=200&loan_principal=400000
