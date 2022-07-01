@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Debt Repayment Calculator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<script src="script.js"></script>
+
+<body>
+    <div class="container-fluid">
+        <form>
+            <div class="form-group row">
+                <label for="inputIncome" class="col-sm-2 col-form-label">Yearly Income</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputIncome" placeholder="Income">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputLoanPrincipal" class="col-sm-2 col-form-label">Total Debt</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputLoanPrincipal" placeholder="Total Debt">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputTerm" class="col-sm-2 col-form-label">Desired Term</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticTerm" value="default">
+                    <input type="range" class="form-range" id="inputTermRange" style="width:100%"">
+                </div>
+            </div>
+            <div class=" form-group row">
+                <label for="inputRepayment" class="col-sm-2 col-form-label">Desired Repayment (m)</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticRepayment" value="100%">
+                    <input type="range" class="form-range" id="inputRepaymentRange" style="width:100%"">
+                </div>
+            </div>
+            <label for="inputExpenses" class="col-form-label">Monthly Expenses</label>
+            <button class="btn btn-primary" style="float:right" onclick="addExpense()">Add another row</button>
+            <div class="expense-table" id="expenses">
+                <div class="form-group row">
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="Expense">
+                    </div>
+                    <div class="col-sm-2" style="padding-left:0px">
+                        <input type="text" class="form-control" placeholder="Value">
+                    </div>
+                    <button class="btn btn-danger" onclick="removeExpense(this)">-</button>
+                </div>
+            </div>
+        </form>
+
+        <p>Based on the above information you provided:</p>
+        <pre>
+        - list reconnmendations (have a dict with reconnmendations for if it contains netflix, disney, etc. ) reconnmendations for shoppiong etc
+        - show repayments per month
+        - show savings/money left over
+        - maybe include some sort of investment thingie
+        - left over money, add an option for a pearler investment product, and do projections for what the money could turn into by the end of the term (both compound earnings and total contributions)
+
+        "It looks like you have quite a few subscription services, maybe you should consider if you are getting your moneys worth with each of them."
+        
+        "You spend a lot on shopping each month. Maybe try see if you can cut out or reduce any non-essential shopping you do."
+
+        "It looks like you spend a lot on takeout and eating out, maybe try see if you can cook at home, or cheaper alternatives such as frozen meals (which are actually quite tasty)"
+
+        "You are already putting money aside for investing, nice work!"
+    </pre>
+                    
+    </div>
+</body>
+
+</html>
